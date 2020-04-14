@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include"output.h"
 #include <QTextEdit>
+#include <QDoubleValidator>
 
 input_priority_non::input_priority_non(QWidget *parent) :
     QDialog(parent),
@@ -20,39 +21,58 @@ input_priority_non::~input_priority_non()
 }
 
 int j=0;
-QString Process1[10];
-int ArrivalTime1[10];
-int BurstTime1[10];
-QString proc_name[10];
-int bt[10];
-int arr[10];
-int priority[10];
-int starting[10];
-int waiting[10];
-int gap1[10];
+QString Process1[1000];
+float ArrivalTime1[1000];
+float BurstTime1[1000];
+QString proc_name[1000];
+float bt[1000];
+float arr[1000];
+float priority[1000];
+float starting[1000];
+float waiting [1000];
+float gap1[1000];
 float turnaroundAvg;
 float waitingAvg;
-int starting_time1[10];
+float starting_time1[1000];
 
 void input_priority_non::on_PB_next_clicked()
 {
+
+    int pos=0;
+        QString arrival =ui->lineEdit_arrival_2->text();
+        QString Burst=ui->lineEdit_burst_2->text();
+        QString Priority=ui->priority->text();
+
+         QDoubleValidator v( 0, 10000,3, this );
+
+
+
+
+        if(v.validate(arrival , pos)==QValidator::Invalid ||v.validate(Burst , pos)==QValidator::Invalid  ||v.validate(Priority , pos)==QValidator::Invalid)
+        {
+            QMessageBox::warning(this, "Wrong input", "Please enter a number");
+
+        }
+
+    else{
     Process1[j]=ui->lineEdit_name_2->text();
-    ArrivalTime1[j]=ui->lineEdit_arrival_2->text().split(" ")[0].toInt();
-    BurstTime1[j]=ui->lineEdit_burst_2->text().split(" ")[0].toInt();
-    priority[j]=ui->priority->text().split(" ")[0].toInt();
+    ArrivalTime1[j]=ui->lineEdit_arrival_2->text().split(" ")[0].toFloat();
+    BurstTime1[j]=ui->lineEdit_burst_2->text().split(" ")[0].toFloat();
+    priority[j]=ui->priority->text().split(" ")[0].toFloat();
 
     j++;
     ui->lineEdit_name_2->clear();
     ui->lineEdit_arrival_2->clear();
     ui->lineEdit_burst_2->clear();
     ui->priority->clear();
+    }
 }
 
 
 
-int bt_comparison(int v[], int count) {
+float bt_comparison(float v[], int count) {
 
-    int sum = 0;
+    float sum = 0;
     for (int i = 0; i < count; i++) {
         sum += v[i];
     }
@@ -60,9 +80,10 @@ int bt_comparison(int v[], int count) {
 }
 
 
-void sort_process_nonpre( QString proc_name[] , int bt[] ,  int arr[] ,int priority[] , int size) {
+void sort_process_nonpre( QString proc_name[] , float bt[] ,  float arr[] ,float priority[] , int size) {
 
-    int temp , index;
+   float temp ;
+            int index;
     QString temp_str;
 
     for (int i = 0; i < size ; i++) {
@@ -127,7 +148,7 @@ void sort_process_nonpre( QString proc_name[] , int bt[] ,  int arr[] ,int prior
 }
 
 
-void calc_waiting_starting_gap (int bt[] , int arr[] , int starting[] , int waiting[], int gap1[] ,int size) {
+void calc_waiting_starting_gap (float bt[] , float arr[] , float starting[] , float waiting[], float gap1[] ,int size) {
 
 
     for (int i = 0; i < size; i++) {
@@ -155,7 +176,7 @@ void calc_waiting_starting_gap (int bt[] , int arr[] , int starting[] , int wait
 
 
 
-float  turnaround_avg(int bt[] , int waiting[] , int size ) {
+float  turnaround_avg(float bt[] , float waiting[] , int size ) {
 
     float ta_avg = 0;
 
@@ -172,7 +193,7 @@ float  turnaround_avg(int bt[] , int waiting[] , int size ) {
 
 // this function simply return average waiting time.
 
-float  waiting_avg(int waiting[] , int size) {
+float  waiting_avg(float waiting[] , int size) {
     float avg = 0;
     for (int i = 0; i < size; i++) {
         avg += waiting[i];
@@ -182,7 +203,7 @@ float  waiting_avg(int waiting[] , int size) {
     return avg;
 }
 
-void Gant_chart1(QString Process1[], int ArrivalTime1[], int BurstTime1[], int size,int starting_time[], int gap1[]) {
+void Gant_chart1(QString Process1[], float ArrivalTime1[], float BurstTime1[], int size,float starting_time[], float gap1[]) {
     //gap.resize(size);
     //starting_time.resize(size);
     for (int i = 0; i < size; i++) {
@@ -212,10 +233,27 @@ void Gant_chart1(QString Process1[], int ArrivalTime1[], int BurstTime1[], int s
 void input_priority_non::on_PB_finish_clicked()
 {
 
+
+    int pos=0;
+        QString arrival =ui->lineEdit_arrival_2->text();
+        QString Burst=ui->lineEdit_burst_2->text();
+        QString Priority =ui->priority->text();
+         QDoubleValidator v( 0, 10000,3, this );
+
+
+
+
+        if(v.validate(arrival , pos)==QValidator::Invalid ||v.validate(Burst , pos)==QValidator::Invalid ||v.validate(Priority , pos)==QValidator::Invalid)
+        {
+            QMessageBox::warning(this, "Wrong input", "Please enter a number");
+
+        }
+
+    else{
     Process1[j]=ui->lineEdit_name_2->text();
-    ArrivalTime1[j]=ui->lineEdit_arrival_2->text().split(" ")[0].toInt();
-    BurstTime1[j]=ui->lineEdit_burst_2->text().split(" ")[0].toInt();
-    priority[j]=ui->priority->text().split(" ")[0].toInt();
+    ArrivalTime1[j]=ui->lineEdit_arrival_2->text().split(" ")[0].toFloat();
+    BurstTime1[j]=ui->lineEdit_burst_2->text().split(" ")[0].toFloat();
+    priority[j]=ui->priority->text().split(" ")[0].toFloat();
 
     sort_process_nonpre(Process1 , BurstTime1 , ArrivalTime1 , priority , j+1);
    calc_waiting_starting_gap(BurstTime1 , ArrivalTime1 , starting , waiting , gap1 , j+1);
@@ -344,6 +382,11 @@ int move1=0;
  move=0;
  move1=0;
  move2=0;
+ ui->lineEdit_name_2->clear();
+ ui->lineEdit_arrival_2->clear();
+ ui->lineEdit_burst_2->clear();
+ ui->priority->clear();
+        }
 
 }
 

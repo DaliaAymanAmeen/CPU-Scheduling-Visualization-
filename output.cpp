@@ -3,6 +3,7 @@
 #include "input_fcfs.h"
 #include"ui_input_fcfs.h"
 #include "rr.h"
+#include "preemptive.h"
 #include <QString>
 
 output::output(QWidget *parent) :

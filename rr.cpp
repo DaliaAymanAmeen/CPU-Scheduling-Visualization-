@@ -8,7 +8,7 @@
 #include "ui_output.h"
 #include <QTextEdit>
 #include "QVector"
-
+#include <QDoubleValidator>
 
 rr::rr(QWidget *parent) :
     QDialog(parent),
@@ -23,34 +23,47 @@ rr::~rr()
 }
 
 int r=0;
-QVector <QString> process6(10);
-QVector <int> ArrivalTime6(10);
-QVector <int> BurstTime6(10);
-QVector <QString> fixed_process(10);
-int TurnAroundTime6[10];
+QVector <QString> process6(1000);
+QVector <float> ArrivalTime6(1000);
+QVector <float> BurstTime6(1000);
+QVector <QString> fixed_process(1000);
+float TurnAroundTime6[1000];
 float AvgWaitingTime6=0;
 float AvgTurnAround6=0;
-QVector <int> StartingTime6 (10);
+QVector <float> StartingTime6 (1000);
 int Q;
-int temp;
+float temp;
 int old_size;
-QVector <int> GapTime6 (10);
+QVector <float> GapTime6 (1000);
 int size1;
 
 void rr::on_PB_next_clicked()
-{
+{ int pos=0;
+    QString arrival =ui->lineEdit_arrival6->text();
+    QString Burst=ui->lineEdit_burst6->text();
+     QDoubleValidator v( 0, 10000,3, this );
+
+
+
+
+    if(v.validate(arrival , pos)==QValidator::Invalid ||v.validate(Burst , pos)==QValidator::Invalid)
+    {
+        QMessageBox::warning(this, "Wrong input", "Please enter a number");
+
+    }
+    else{
     process6[r]=ui->lineEdit_name6->text();
-    ArrivalTime6[r]=ui->lineEdit_arrival6->text().split(" ")[0].toInt();
-    BurstTime6[r]=ui->lineEdit_burst6->text().split(" ")[0].toInt();
+    ArrivalTime6[r]=ui->lineEdit_arrival6->text().split(" ")[0].toFloat();
+    BurstTime6[r]=ui->lineEdit_burst6->text().split(" ")[0].toFloat();
     fixed_process[r]=process6[r];
     r++;
     ui->lineEdit_name6->clear();
     ui->lineEdit_arrival6->clear();
-    ui->lineEdit_burst6->clear();
+    ui->lineEdit_burst6->clear();}
 
 }
 
-void erase( QVector <QString> &process , QVector <int>&ArrivalTime, QVector <int> &BurstTime, int &size,int i){
+void erase( QVector <QString> &process , QVector <float>&ArrivalTime, QVector <float> &BurstTime, int &size,int i){
     //function to erase one element from each vector with index i
     for(int j=i ;j<size-1;j++)
     {
@@ -66,9 +79,9 @@ void erase( QVector <QString> &process , QVector <int>&ArrivalTime, QVector <int
 }
 
 
-void sort_process( QVector <QString> &process,QVector <int>&ArrivalTime, QVector <int> &BurstTime, int &size){
+void sort_process( QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> &BurstTime, int &size){
     //function to sort processes according to arrival time.
-    int temp_int;
+    float temp_int;
     QString temp_process;
     for(int i=0;i<size;i++){
         for(int j=i;j<size;j++){
@@ -90,7 +103,7 @@ void sort_process( QVector <QString> &process,QVector <int>&ArrivalTime, QVector
     }
 }
 
-void round_robin_editing(QVector <QString> &process,QVector <int>&ArrivalTime, QVector <int> &BurstTime, int &size,int Q){
+void round_robin_editing(QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> &BurstTime, int &size,int Q){
             int temp_size=0,adder=0;
             QVector <QString> rr_process;
             QVector <int> rr_ArrivalTime;
@@ -99,7 +112,7 @@ void round_robin_editing(QVector <QString> &process,QVector <int>&ArrivalTime, Q
             int  rr_size;
             //calculating new number of processes according to RR and resizing the new vectors.
             for(int i=0;i<size;i++){
-            if(BurstTime[i]%Q ==0)
+            if(int(BurstTime[i])%Q ==0)
             {temp_size=temp_size+(BurstTime[i]/Q);}
             else
             {temp_size=temp_size+(BurstTime[i]/Q)+1;}
@@ -110,7 +123,8 @@ void round_robin_editing(QVector <QString> &process,QVector <int>&ArrivalTime, Q
             rr_ArrivalTime.resize(rr_size);
             rr_BurstTime.resize(rr_size);
             //cutting the old processes accroding to the RR and placing them in the new vectors
-            int j=0,total_burst=0;
+            int j=0;
+            float total_burst=0;
             while(size >0){
                 for(int i=0;i<size;i++){
                     for(int k=0;k<j;k++){
@@ -154,7 +168,7 @@ void round_robin_editing(QVector <QString> &process,QVector <int>&ArrivalTime, Q
 
     }
 
- void adding_starting_gap_time(QVector <QString> &process,QVector <int>&ArrivalTime, QVector <int> &BurstTime,QVector <int> &StartingTime,QVector <int> &GapTime, int &size)
+ void adding_starting_gap_time(QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> &BurstTime,QVector <float> &StartingTime,QVector <float> &GapTime, int &size)
         {
             int temp=0;
             //resizing new vectors to the new number of processes after modifying them.
@@ -181,7 +195,7 @@ void round_robin_editing(QVector <QString> &process,QVector <int>&ArrivalTime, Q
             }
         }
 
-void RR(QVector <QString> &process,QVector <int>&ArrivalTime, QVector <int> &BurstTime,QVector <int> &StartingTime,QVector <int> &GapTime, int &size,int Q){
+void RR(QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> &BurstTime,QVector <float> &StartingTime,QVector <float> &GapTime, int &size,int Q){
             //sorting processes according to arrival time.
             sort_process(process,ArrivalTime,BurstTime,size);
             //making RR slices.
@@ -190,9 +204,9 @@ void RR(QVector <QString> &process,QVector <int>&ArrivalTime, QVector <int> &Bur
             adding_starting_gap_time(process,ArrivalTime,BurstTime,StartingTime,GapTime,size);
         }
 
-float AVG_waiting(QVector <int>&ArrivalTime,QVector <int> &StartingTime, int &size){
+float AVG_waiting(QVector <float>&ArrivalTime,QVector <float> &StartingTime, int &size){
 
-            int total_wait=0;
+            float total_wait=0;
             for(int i=0;i<size;i++){
                 total_wait+=StartingTime[i]-ArrivalTime[i];
 
@@ -202,10 +216,10 @@ float AVG_waiting(QVector <int>&ArrivalTime,QVector <int> &StartingTime, int &si
             return ((float)total_wait/(float)size);
         }
 
-float AVG_TurnAround(QVector <QString> &process,QVector <QString> &old_process,QVector <int>&ArrivalTime, QVector <int> &BurstTime,QVector <int> &StartingTime,int &size,int &old_size){
+float AVG_TurnAround(QVector <QString> &process,QVector <QString> &old_process,QVector <float>&ArrivalTime, QVector <float> &BurstTime,QVector <float> &StartingTime,int &size,int &old_size){
 
-            QVector <int> turn_around(old_size);
-            int turn_aroundd=0,sum=0;
+            QVector <float> turn_around(old_size);
+            float turn_aroundd=0,sum=0;
             for(int i=0;i<old_size;i++){
                 for(int j=0;j<size;j++){
                     if(old_process[i]==process[j])
@@ -225,11 +239,25 @@ float AVG_TurnAround(QVector <QString> &process,QVector <QString> &old_process,Q
 
 
 void rr::on_PB_finish_clicked()
-{
+{ int pos=0;
+    QString arrival =ui->lineEdit_arrival6->text();
+    QString Burst=ui->lineEdit_burst6->text();
+    QString times=ui->lineEdit_timeslice->text();
+     QDoubleValidator v( 0, 10000,3, this );
+
+
+
+
+    if(v.validate(arrival , pos)==QValidator::Invalid ||v.validate(Burst , pos)==QValidator::Invalid||v.validate(times , pos)==QValidator::Invalid)
+    {
+        QMessageBox::warning(this, "Wrong input", "Please enter a number");
+
+    }
+    else{
     process6[r]=ui->lineEdit_name6->text();
-    ArrivalTime6[r]=ui->lineEdit_arrival6->text().split(" ")[0].toInt();
-    BurstTime6[r]=ui->lineEdit_burst6->text().split(" ")[0].toInt();
-    Q=ui->lineEdit_timeslice->text().split(" ")[0].toInt();
+    ArrivalTime6[r]=ui->lineEdit_arrival6->text().split(" ")[0].toFloat();
+    BurstTime6[r]=ui->lineEdit_burst6->text().split(" ")[0].toFloat();
+    Q=ui->lineEdit_timeslice->text().split(" ")[0].toFloat();
     size1=r+1;
     old_size=size1;
 
@@ -273,7 +301,7 @@ void rr::on_PB_finish_clicked()
     if(i==0)
     {
         label->setFixedWidth((int(BurstTime6[i]))*14);
-        move=BurstTime6[0]+GapTime6[i];
+        move=BurstTime6[0]+GapTime6[1];
 
     }
 
@@ -281,8 +309,8 @@ void rr::on_PB_finish_clicked()
     {
         label->setFixedWidth((int(BurstTime6[i]))*14);
         label->move((move)*14,0);
-        move+=BurstTime6[i]+GapTime6[i];
 
+        if (i!=size1-1) move+=BurstTime6[i]+GapTime6[i+1];
     }
 
     label->setStyleSheet("QLabel {text-align: center;background-color :pink; color :white; border-width : 2px ; border-style: solid; border-color:white }");
@@ -293,32 +321,34 @@ void rr::on_PB_finish_clicked()
 
 
 int move1=0;
-
+//start time
  for (int i=0 ; i<size1 ; i++)
  {
     QLabel* lable =new QLabel(&out);
     lable->setText(QString::number(StartingTime6[i]));
     lable->move((move1)*14,21);
-    move1+=BurstTime6[i]+GapTime6[i];
+    if (i!=size1-1) move1+=BurstTime6[i]+GapTime6[i+1];
+    else move1+= BurstTime6[i];
     lable->show();
 
-    if (i==size1-1)
+    if (i==size1-1)  //akher proces finish time
         {  QLabel* lable =new QLabel(&out);
             lable->move((move1)*14,21);
             lable->setText(QString::number(StartingTime6[i]+BurstTime6[i]));
-            move1+=BurstTime6[i]+GapTime6[i];
+            //move1+=BurstTime6[i]+GapTime6[i];
             lable->show();
         }
 
  }
 int move2=BurstTime6[0];
- for (int i=0 ; i<size1 ; i++)
+//finish time
+ for (int i=0 ; i<size1-1 ; i++)
     {
-       if (GapTime6[i]==0) {move2+=BurstTime6[i]; continue;}
+       if (GapTime6[i+1]==0) {move2+=BurstTime6[i]; continue;}
        QLabel* lable =new QLabel(&out);
        lable->move((move2)*14,21);
        lable->setText(QString::number(StartingTime6[i]+BurstTime6[i]));
-       move2+=BurstTime6[i+1]+GapTime6[i];
+       if (i!=size1-1) move2+=BurstTime6[i+1]+GapTime6[i+1]; //+1
        lable->show();
 
     }
@@ -352,4 +382,10 @@ AvgWaitingTime6=0;
  move=0;
  move1=0;
  move2=0;
+ ui->lineEdit_name6->clear();
+ ui->lineEdit_arrival6->clear();
+ ui->lineEdit_burst6->clear();
+ ui->lineEdit_timeslice->clear();
+
+}
 }

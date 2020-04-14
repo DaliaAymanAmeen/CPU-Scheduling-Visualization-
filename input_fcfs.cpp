@@ -7,6 +7,9 @@
 #include "output.h"
 #include "ui_output.h"
 #include <QTextEdit>
+#include <QIntValidator>
+#include <QDoubleValidator>
+
 input_fcfs::input_fcfs(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::input_fcfs)
@@ -25,33 +28,48 @@ input_fcfs::~input_fcfs()
 
 
 int k=0;
-QString Process[10];
-int ArrivalTime[10];
-int BurstTime[10];
-int WaitingTime[10];
-int TurnAroundTime[10];
+QString Process[1000];
+float ArrivalTime[1000];
+float BurstTime[1000];
+float WaitingTime[1000];
+float TurnAroundTime[1000];
 float AvgWaitingTime=0;
 float AvgTurnAround=0;
-int starting_time[10];
-int gap[10];
+float starting_time[1000];
+float gap[1000];
+
 
 void input_fcfs::on_PB_next_clicked()
-{
-    Process[k]=ui->lineEdit_name->text();
-    ArrivalTime[k]=ui->lineEdit_arrival->text().split(" ")[0].toInt();
-    BurstTime[k]=ui->lineEdit_burst->text().split(" ")[0].toInt();
+{   int pos=0;
+    QString arrival =ui->lineEdit_arrival->text();
+    QString Burst=ui->lineEdit_burst->text();
+    QDoubleValidator vd(0,1000,3,this);
+     //QIntValidator v( 0, 10000, this );
+
+
+
+
+    if(vd.validate(arrival , pos)==QValidator::Invalid ||vd.validate(Burst , pos)==QValidator::Invalid  )
+    {
+        QMessageBox::warning(this, "Wrong input", "Please enter a number");
+
+    }
+    else{
+        Process[k]=ui->lineEdit_name->text();
+    ArrivalTime[k]=ui->lineEdit_arrival->text().split(" ")[0].toFloat();
+    BurstTime[k]=ui->lineEdit_burst->text().split(" ")[0].toFloat();
     k++;
     ui->lineEdit_name->clear();
     ui->lineEdit_arrival->clear();
     ui->lineEdit_burst->clear();
-
+    }
 }
 
 
 
-void Sort_arriaval_time(QString Process[], int ArrivalTime[], int BurstTime[], int size) {
-    int temp_at;
-    int temp_bt;
+void Sort_arriaval_time(QString Process[], float ArrivalTime[], float BurstTime[], int size) {
+    float temp_at;
+    float temp_bt;
     QString temp_Process;
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++)
@@ -76,11 +94,11 @@ void Sort_arriaval_time(QString Process[], int ArrivalTime[], int BurstTime[], i
 
 
 
-void find_waiting_time(QString Process[], int ArrivalTime[], int BurstTime[], int size, int WaitingTime[]) {
+void find_waiting_time(QString Process[], float ArrivalTime[], float BurstTime[], int size, float WaitingTime[]) {
     Sort_arriaval_time(Process, ArrivalTime, BurstTime, size);
 
     //int *service_time = new int[size];        //ghayart di l array 3adi
-    int service_time [10];
+    float service_time [1000];
     service_time[0] = 0;
 
     //WaitingTime.resize(size); // change  // shelt di khales
@@ -99,7 +117,7 @@ void find_waiting_time(QString Process[], int ArrivalTime[], int BurstTime[], in
 
 
 
-void find_total_arround_time(QString Process[], int ArrivalTime[], int BurstTime[], int size, int WaitingTime[], int TurnAroundTime[]) {
+void find_total_arround_time(QString Process[], float ArrivalTime[], float BurstTime[], int size,float WaitingTime[], float TurnAroundTime[]) {
     find_waiting_time(Process, ArrivalTime, BurstTime, size, WaitingTime);
 
     //TurnAroundTime.resize(size);   //Change
@@ -110,12 +128,12 @@ void find_total_arround_time(QString Process[], int ArrivalTime[], int BurstTime
 }
 
 
-void find_total_average_time(QString Process[], int ArrivalTime[], int BurstTime[], int size, int WaitingTime[], int TurnAroundTime[],
+void find_total_average_time(QString Process[], float ArrivalTime[], float BurstTime[], int size, float WaitingTime[], float TurnAroundTime[],
    float &AvgWaitingTime, float &AvgTurnAround)  {
 
-    int sumOfTurnAround = 0;
+    float sumOfTurnAround = 0;
     find_total_arround_time(Process, ArrivalTime, BurstTime, size, WaitingTime, TurnAroundTime);
-    int sumOfWaitingTime = 0;
+    float sumOfWaitingTime = 0;
     find_waiting_time(Process, ArrivalTime, BurstTime, size, WaitingTime);
     for (int i = 0; i < size; i++)
     {
@@ -127,7 +145,7 @@ void find_total_average_time(QString Process[], int ArrivalTime[], int BurstTime
 }
 
 
-void Gant_chart(QString Process[], int ArrivalTime[], int BurstTime[], int size,int starting_time[], int gap[]) {
+void Gant_chart(QString Process[], float ArrivalTime[], float BurstTime[], int size,float starting_time[], float gap[]) {
     //gap.resize(size);
     //starting_time.resize(size);
     for (int i = 0; i < size; i++) {
@@ -157,9 +175,25 @@ void Gant_chart(QString Process[], int ArrivalTime[], int BurstTime[], int size,
 
 void input_fcfs::on_PB_finish_clicked()
 {
+    int pos=0;
+        QString arrival =ui->lineEdit_arrival->text();
+        QString Burst=ui->lineEdit_burst->text();
+         QDoubleValidator v( 0, 10000,3, this );
+
+
+
+
+        if(v.validate(arrival , pos)==QValidator::Invalid ||v.validate(Burst , pos)==QValidator::Invalid)
+        {
+            QMessageBox::warning(this, "Wrong input", "Please enter a number");
+
+        }
+
+
+    else{
     Process[k]=ui->lineEdit_name->text();
-    ArrivalTime[k]=ui->lineEdit_arrival->text().split(" ")[0].toInt();
-    BurstTime[k]=ui->lineEdit_burst->text().split(" ")[0].toInt();
+    ArrivalTime[k]=ui->lineEdit_arrival->text().split(" ")[0].toFloat();
+    BurstTime[k]=ui->lineEdit_burst->text().split(" ")[0].toFloat();
 
 
     find_total_average_time(Process, ArrivalTime,  BurstTime, k+1 ,  WaitingTime,  TurnAroundTime,
@@ -175,7 +209,7 @@ void input_fcfs::on_PB_finish_clicked()
     //QMessageBox::about(this, "test", QString::number(starting_time[0]));
 
     //to check the output
-    //QMessageBox::about(this, "test", Process[0]);
+    //
     //QMessageBox::about(this, "test", Process[1]);
     //QMessageBox::about(this, "test", Process[2]);
     //QMessageBox::about(this, "test", Process[3]);
@@ -207,7 +241,7 @@ void input_fcfs::on_PB_finish_clicked()
     label_turn->show();
 
 
-    int move=0;
+   int move=0;
  for(int i=0;i<k+1;i++)
  {
 
@@ -257,7 +291,7 @@ int move1=0;
 
  }
 
- int move2=BurstTime[0];
+int move2=BurstTime[0];
 
    for (int i=0 ; i<k+1 ; i++)
    {
@@ -288,6 +322,10 @@ k=0;
 move=0;
 move1=0;
 move2=0;
+ui->lineEdit_name->clear();
+ui->lineEdit_arrival->clear();
+ui->lineEdit_burst->clear();
+    }
 }
 
 

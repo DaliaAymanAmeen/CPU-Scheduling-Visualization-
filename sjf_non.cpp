@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include "output.h"
 #include <QTextEdit>
+#include <QDoubleValidator>
 
 SJF_non::SJF_non(QWidget *parent) :
     QDialog(parent),
@@ -20,44 +21,59 @@ SJF_non::~SJF_non()
 }
 
 int l=0;
-QString Process2[10];
-int ArrivalTime2[10];
-int BurstTime2[10];
-int bt1[10];
-int arr1[10];
-int starting1[10];
-int waiting1[10];
-int gap2[10];
+QString Process2[1000];
+float ArrivalTime2[1000];
+float BurstTime2[1000];
+float bt1[1000];
+float arr1[1000];
+float starting1[1000];
+float waiting1[1000];
+float gap2[1000];
 float turnaroundAvg1;
 float waitingAvg1;
-int starting_time2[10];
+float starting_time2[1000];
 
 
 void SJF_non::on_PB_next_clicked()
 {
+    int pos=0;
+        QString arrival =ui->lineEdit_arrival_3->text();
+        QString Burst=ui->lineEdit_burst_3->text();
+         QDoubleValidator v( 0, 10000,3, this );
+
+
+
+
+        if(v.validate(arrival , pos)==QValidator::Invalid ||v.validate(Burst , pos)==QValidator::Invalid)
+        {
+            QMessageBox::warning(this, "Wrong input", "Please enter a number");
+
+        }
+    else{
     Process2[l]=ui->lineEdit_name_3->text();
-    ArrivalTime2[l]=ui->lineEdit_arrival_3->text().split(" ")[0].toInt();
-    BurstTime2[l]=ui->lineEdit_burst_3->text().split(" ")[0].toInt();
+    ArrivalTime2[l]=ui->lineEdit_arrival_3->text().split(" ")[0].toFloat();
+    BurstTime2[l]=ui->lineEdit_burst_3->text().split(" ")[0].toFloat();
 
     l++;
     ui->lineEdit_name_3->clear();
     ui->lineEdit_arrival_3->clear();
     ui->lineEdit_burst_3->clear();
-
+}
 }
 
-int bt_comparison1(int v[], int count) {
+float bt_comparison1(float v[], int count) {
 
-    int sum = 0;
+    float sum = 0;
     for (int i = 0; i < count; i++) {
         sum += v[i];
     }
     return sum;
 }
 
-void sort_process_sjf_nonpre(QString proc_name[] , int bt[] , int arr[] , int size) {
+void sort_process_sjf_nonpre(QString proc_name[] , float bt[] , float arr[] , int size) {
 
-        int temp , index ;
+        float temp ;
+                int index ;
         QString temp_str;
 
         for (int i = 0; i < size ; i++) {
@@ -127,7 +143,7 @@ void sort_process_sjf_nonpre(QString proc_name[] , int bt[] , int arr[] , int si
 
     }
 
-void calc_waiting_starting_gap1 (int bt[] , int arr[] , int starting[] , int waiting[], int gap1[] ,int size) {
+void calc_waiting_starting_gap1 (float bt[] , float arr[] , float starting[] , float waiting[], float gap1[] ,int size) {
 
 
     for (int i = 0; i < size; i++) {
@@ -155,7 +171,7 @@ void calc_waiting_starting_gap1 (int bt[] , int arr[] , int starting[] , int wai
 
 
 
-float  turnaround_avg1(int bt[] , int waiting[] , int size ) {
+float  turnaround_avg1(float bt[] , float waiting[] , int size ) {
 
     float ta_avg = 0;
 
@@ -172,7 +188,7 @@ float  turnaround_avg1(int bt[] , int waiting[] , int size ) {
 
 // this function simply return average waiting time.
 
-float  waiting_avg1(int waiting[] , int size) {
+float  waiting_avg1(float waiting[] , int size) {
     float avg = 0;
     for (int i = 0; i < size; i++) {
         avg += waiting[i];
@@ -183,7 +199,7 @@ float  waiting_avg1(int waiting[] , int size) {
 }
 
 
-void Gant_chart2(QString Process2[], int ArrivalTime2[], int BurstTime2[], int size,int starting_time2[], int gap2[]) {
+void Gant_chart2(QString Process2[], float ArrivalTime2[], float BurstTime2[], int size,float starting_time2[], float gap2[]) {
     //gap.resize(size);
     //starting_time.resize(size);
     for (int i = 0; i < size; i++) {
@@ -215,9 +231,23 @@ void Gant_chart2(QString Process2[], int ArrivalTime2[], int BurstTime2[], int s
 
 void SJF_non::on_PB_finish_clicked()
 {
+    int pos=0;
+        QString arrival =ui->lineEdit_arrival_3->text();
+        QString Burst=ui->lineEdit_burst_3->text();
+         QDoubleValidator v( 0, 10000,3, this );
+
+
+
+
+        if(v.validate(arrival , pos)==QValidator::Invalid ||v.validate(Burst , pos)==QValidator::Invalid)
+        {
+            QMessageBox::warning(this, "Wrong input", "Please enter a number");
+
+        }
+    else{
     Process2[l]=ui->lineEdit_name_3->text();
-    ArrivalTime2[l]=ui->lineEdit_arrival_3->text().split(" ")[0].toInt();
-    BurstTime2[l]=ui->lineEdit_burst_3->text().split(" ")[0].toInt();
+    ArrivalTime2[l]=ui->lineEdit_arrival_3->text().split(" ")[0].toFloat();
+    BurstTime2[l]=ui->lineEdit_burst_3->text().split(" ")[0].toFloat();
 
    sort_process_sjf_nonpre(Process2 , BurstTime2 ,ArrivalTime2 , l+1);
    calc_waiting_starting_gap1(BurstTime2 , ArrivalTime2 , starting1 , waiting1 , gap2 , l+1);
@@ -341,4 +371,8 @@ l=0;
 move=0;
 move1=0;
 move2=0;
+ui->lineEdit_name_3->clear();
+ui->lineEdit_arrival_3->clear();
+ui->lineEdit_burst_3->clear();
+    }
 }
