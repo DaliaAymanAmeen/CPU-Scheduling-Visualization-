@@ -18,13 +18,15 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    void on_RB_priority_clicked();
+   // void on_RB_priority_clicked();
 
-    void on_RB_sjf_2_clicked();
+    //void on_RB_sjf_2_clicked();
 
-    void on_RB_sjf_4_clicked();
+    //void on_RB_sjf_4_clicked();
 
-    void on_RB_rr_clicked();
+//    void on_RB_rr_clicked();
+
+    void on_NewOperation_clicked();
 
 private:
     Ui::MainWindow *ui;

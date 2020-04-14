@@ -19,90 +19,75 @@
      <rect>
       <x>30</x>
       <y>40</y>
-      <width>211</width>
-      <height>191</height>
+      <width>291</width>
+      <height>261</height>
      </rect>
     </property>
     <property name="title">
      <string>Process:</string>
     </property>
-    <widget class="QRadioButton" name="RB_FCFS">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>82</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>FCFS</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="RB_priority">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>60</y>
-       <width>82</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>priority</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="RB_sjf">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>90</y>
-       <width>82</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>sjf</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="RB_preemptive">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>120</y>
-       <width>82</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>preemptive</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="RB_rr">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>150</y>
-       <width>82</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Round_Robin</string>
-     </property>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QRadioButton" name="RB_FCFS">
+       <property name="text">
+        <string>FCFS</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="RB_priority">
+       <property name="text">
+        <string>priority</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="RB_sjf">
+       <property name="text">
+        <string>sjf</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="RB_rr">
+       <property name="text">
+        <string>Round_Robin</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="RB_preemptive_SJF">
+       <property name="text">
+        <string>preemptive_SJF</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>354</x>
-      <y>162</y>
+      <x>410</x>
+      <y>290</y>
       <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NewOperation">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>290</y>
+      <width>111</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>New Operation</string>
     </property>
    </widget>
   </widget>
@@ -112,7 +97,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

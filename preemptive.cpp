@@ -89,10 +89,10 @@ void preemptive::on_PB_finish_clicked()
     text_TurnAround->show();
 
     QLabel* label_avg =new QLabel(&out);
-    label_avg->setText("Average Waiting time is:");
+    label_avg->setText("Average Waiting time:");
     label_avg->move(50,130);
     QLabel* label_turn= new QLabel(&out);
-    label_turn->setText("Average TurnAround Time is :");
+    label_turn->setText("Average TurnAround Time:");
     label_turn->move(50,160);
     label_avg->show();
     label_turn->show();
@@ -107,15 +107,15 @@ void preemptive::on_PB_finish_clicked()
 
     if(i==0)
     {
-        label->setFixedWidth((int(BurstTime5[i]))*7);
+        label->setFixedWidth((int(BurstTime5[i]))*14);
         move=BurstTime5[0];
 
     }
 
     else
     {
-        label->setFixedWidth((int(BurstTime5[i]))*7);
-        label->move((move)*7,0);
+        label->setFixedWidth((int(BurstTime5[i]))*14);
+        label->move((move)*14,0);
         move+=BurstTime5[i];
 
     }
@@ -134,7 +134,7 @@ int move1=0;
  {
     QLabel* lable =new QLabel(&out);
     lable->setText(QString::number(starting_time5[i]));
-    lable->move((move1)*7,21);
+    lable->move((move1)*14,21);
     move1+=BurstTime5[i];
     lable->show();
 

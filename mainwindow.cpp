@@ -42,7 +42,7 @@ void MainWindow::on_pushButton_clicked()
         sjf_non.exec();
     }
 
-    else if(ui->RB_preemptive->isChecked())
+    else if(ui->RB_preemptive_SJF->isChecked())
     {
         preemptive preemptive;
         preemptive.setModal(true);
@@ -60,5 +60,15 @@ void MainWindow::on_pushButton_clicked()
 
 
 
+
+}
+
+void MainWindow::on_NewOperation_clicked()
+{
+    ui->RB_rr->setChecked(false);
+    ui->RB_preemptive_SJF->setChecked(false);
+    ui->RB_sjf->setChecked(false);
+    ui->RB_priority->setChecked(false);
+    ui->RB_FCFS->setChecked(false);
 
 }

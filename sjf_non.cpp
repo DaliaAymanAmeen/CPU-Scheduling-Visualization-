@@ -20,17 +20,17 @@ SJF_non::~SJF_non()
 }
 
 int l=0;
-QString Process2[1000];
-int ArrivalTime2[1000];
-int BurstTime2[1000];
-int bt1[1000];
-int arr1[1000];
-int starting1[1000];
-int waiting1[1000];
-int gap2[1000];
+QString Process2[10];
+int ArrivalTime2[10];
+int BurstTime2[10];
+int bt1[10];
+int arr1[10];
+int starting1[10];
+int waiting1[10];
+int gap2[10];
 float turnaroundAvg1;
 float waitingAvg1;
-int starting_time2[1000];
+int starting_time2[10];
 
 
 void SJF_non::on_PB_next_clicked()
@@ -252,10 +252,10 @@ void SJF_non::on_PB_finish_clicked()
     text_TurnAround->show();
 //el labels elly abl el output
     QLabel* label_avg =new QLabel(&out);
-    label_avg->setText("Average Waiting time is:");
+    label_avg->setText("Average Waiting time:");
     label_avg->move(50,130);
     QLabel* label_turn= new QLabel(&out);
-    label_turn->setText("Average TurnAround Time is :");
+    label_turn->setText("Average TurnAround time:");
     label_turn->move(50,160);
     label_avg->show();
     label_turn->show();
@@ -269,15 +269,15 @@ void SJF_non::on_PB_finish_clicked()
 
     if(i==0)
     {
-        label->setFixedWidth((int(BurstTime2[i]))*7);
+        label->setFixedWidth((int(BurstTime2[i]))*14);
         move=BurstTime2[0]+gap2[1];
 
     }
 
     else
     {
-        label->setFixedWidth((int(BurstTime2[i]))*7);
-        label->move((move)*7,0);
+        label->setFixedWidth((int(BurstTime2[i]))*14);
+        label->move((move)*14,0);
         move+=BurstTime2[i]+gap2[i+1];
 
     }
@@ -295,10 +295,50 @@ int move1=0;
  {
     QLabel* lable =new QLabel(&out);
     lable->setText(QString::number(starting_time2[i]));
-    lable->move((move1)*7,21);
+    lable->move((move1)*14,21);
     move1+=BurstTime2[i]+gap2[i+1];
+    lable->show();
+    if (i==l)
+        {  QLabel* lable =new QLabel(&out);
+            lable->move((move1)*14,21);
+            lable->setText(QString::number(starting_time2[i]+BurstTime2[i]));
+            move1+=BurstTime2[i]+gap2[i+1];
+            lable->show();
+        }
+
+ }
+ int move2=BurstTime2[0];
+
+ for (int i=0 ; i<l+1 ; i++)
+ {
+    if (gap2[i+1]==0) {move2+=BurstTime2[i]; continue;}
+    QLabel* lable =new QLabel(&out);
+    lable->move((move2)*14,21);
+    lable->setText(QString::number(starting_time2[i]+BurstTime2[i]));
+    move2+=BurstTime2[i+1]+gap2[i+1];
     lable->show();
 
  }
 out.exec();
+
+for(int i=0;i<l+1;i++)
+{
+    Process2[i]="";
+    ArrivalTime2[i]=0;
+    BurstTime2[i]=0;
+    bt1[i]=0;
+    arr1[i]=0;
+    starting1[i]=0;
+    waiting1[i]=0;
+    gap2[i]=0;
+
+    starting_time2[i]=0;
+
+}
+turnaroundAvg1=0;
+waitingAvg1=0;
+l=0;
+move=0;
+move1=0;
+move2=0;
 }
