@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>616</width>
-    <height>471</height>
+    <width>769</width>
+    <height>544</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -128,6 +128,14 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>PB_next</tabstop>
+  <tabstop>PB_finish</tabstop>
+  <tabstop>lineEdit_name_2</tabstop>
+  <tabstop>lineEdit_arrival_2</tabstop>
+  <tabstop>lineEdit_burst_2</tabstop>
+  <tabstop>priority</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -13,6 +13,12 @@ input_priority_non::input_priority_non(QWidget *parent) :
     ui(new Ui::input_priority_non)
 {
     ui->setupUi(this);
+    QPixmap bkgnd(":/new/prefix1/img/watercolour-texture-background-vector.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+
 }
 
 input_priority_non::~input_priority_non()
@@ -283,17 +289,17 @@ text_avg->setFixedHeight(30);
 text_TurnAround->setText(QString::number(turnaroundAvg));
 text_TurnAround->setFixedHeight(30);
 
-text_avg->move(200,120);
-text_TurnAround->move(200,150);
+text_avg->move(200,150);
+text_TurnAround->move(200,190);
 text_avg->show();
 text_TurnAround->show();
 
 QLabel* label_avg =new QLabel(&out);
 label_avg->setText("Average Waiting time:");
-label_avg->move(50,130);
+label_avg->move(50,160);
 QLabel* label_turn= new QLabel(&out);
 label_turn->setText("Average TurnAround Time:");
-label_turn->move(50,160);
+label_turn->move(50,200);
 label_avg->show();
 label_turn->show();
 
@@ -306,7 +312,9 @@ label_turn->show();
 
     if(i==0)
     {
+        label->move(5,300);
         label->setFixedWidth((int(BurstTime1[i]))*14);
+        label->setFixedHeight(25);
         move=BurstTime1[0]+gap1[1];
 
     }
@@ -314,12 +322,13 @@ label_turn->show();
     else
     {
         label->setFixedWidth((int(BurstTime1[i]))*14);
-        label->move((move)*14,0);
+        label->setFixedHeight(25);
+        label->move((move)*14,300);
         move+=BurstTime1[i]+gap1[i+1];
 
     }
 
-    label->setStyleSheet("QLabel {text-align: center;background-color :pink; color :white; border-width : 2px ; border-style: solid; border-color:white }");
+    label->setStyleSheet("QLabel {text-align: center;background-color :rgb(148, 200, 190);color :white; border-width : 2px ; border-style: solid; border-color:white }");
     //label->setLayout(QLay)
      label->show();
 
@@ -333,12 +342,12 @@ int move1=0;
  {
     QLabel* lable =new QLabel(&out);
     lable->setText(QString::number(starting_time1[i]));
-    lable->move((move1)*14,21);
+    lable->move((move1)*14,325);
     move1+=BurstTime1[i]+gap1[i+1];
     lable->show();
     if (i==j)
     {  QLabel* lable =new QLabel(&out);
-        lable->move((move1)*14,21);
+        lable->move((move1)*14,325);
         lable->setText(QString::number(starting_time1[i]+BurstTime1[i]));
         move1+=BurstTime1[i]+gap1[i+1];
         lable->show();
@@ -351,7 +360,7 @@ int move1=0;
  {
    if (gap1[i+1]==0) {move2+=BurstTime1[i]; continue;}
    QLabel* lable =new QLabel(&out);
-   lable->move((move2)*14,21);
+   lable->move((move2)*14,325);
    lable->setText(QString::number(starting_time1[i]+BurstTime1   [i]));
    move2+=BurstTime1[i+1]+gap1[i+1];
    lable->show();

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>531</width>
-    <height>450</height>
+    <width>769</width>
+    <height>544</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -137,11 +137,12 @@
   </widget>
  </widget>
  <tabstops>
+  <tabstop>PB_next</tabstop>
+  <tabstop>PB_finish</tabstop>
   <tabstop>lineEdit_name6</tabstop>
   <tabstop>lineEdit_arrival6</tabstop>
   <tabstop>lineEdit_burst6</tabstop>
-  <tabstop>PB_next</tabstop>
-  <tabstop>PB_finish</tabstop>
+  <tabstop>lineEdit_timeslice</tabstop>
  </tabstops>
  <resources/>
  <connections/>

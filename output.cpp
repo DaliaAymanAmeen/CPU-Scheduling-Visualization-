@@ -12,6 +12,13 @@ output::output(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QPixmap bkgnd(":/new/prefix1/img/watercolour-texture-background-vector.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+
+
     //this->setStyleSheet("background-color: white;");
 
    //ui->textEdit_ave->setText(QString::number(&AvgWaitingTime));

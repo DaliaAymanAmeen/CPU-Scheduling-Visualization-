@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">border-color: rgb(255, 85, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
@@ -22,6 +25,9 @@
       <width>291</width>
       <height>261</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="title">
      <string>Process:</string>
@@ -37,14 +43,14 @@
      <item>
       <widget class="QRadioButton" name="RB_priority">
        <property name="text">
-        <string>priority</string>
+        <string>Priority</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="RB_sjf">
        <property name="text">
-        <string>sjf</string>
+        <string>SJF</string>
        </property>
       </widget>
      </item>
@@ -58,7 +64,7 @@
      <item>
       <widget class="QRadioButton" name="RB_preemptive_SJF">
        <property name="text">
-        <string>preemptive_SJF</string>
+        <string>Preemptive_SJF</string>
        </property>
       </widget>
      </item>
@@ -97,7 +103,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
