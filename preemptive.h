@@ -5,10 +5,10 @@
 
 struct SRTF_Process {
     QString id; // Process ID
-    float bt; // Burst Time
-    float at; // Arrival Time
-    float rmt; // remaning time
-    float wt; // waiting time
+    int bt; // Burst Time
+    int at; // Arrival Time
+    int rmt; // remaning time
+    int wt; // waiting time
     SRTF_Process(QString i, float b, float a) {
         id = i;
         bt = b;

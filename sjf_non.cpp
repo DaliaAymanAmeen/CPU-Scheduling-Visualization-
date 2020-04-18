@@ -306,7 +306,7 @@ void SJF_non::on_PB_finish_clicked()
     if(i==0)
     {
         label->move(5,300);
-        label->setFixedWidth((int(BurstTime2[i]))*14);
+        label->setFixedWidth((int(BurstTime2[i]))*25);
         label->setFixedHeight(25);
         move=BurstTime2[0]+gap2[1];
 
@@ -315,9 +315,9 @@ void SJF_non::on_PB_finish_clicked()
 
     else
     {
-        label->setFixedWidth((int(BurstTime2[i]))*14);
+        label->setFixedWidth((int(BurstTime2[i]))*25);
         label->setFixedHeight(25);
-        label->move((move)*14,300);
+        label->move((move)*25,300);
         move+=BurstTime2[i]+gap2[i+1];
 
     }
@@ -335,12 +335,12 @@ int move1=0;
  {
     QLabel* lable =new QLabel(&out);
     lable->setText(QString::number(starting_time2[i]));
-    lable->move((move1)*14,325);
+    lable->move((move1)*25,325);
     move1+=BurstTime2[i]+gap2[i+1];
     lable->show();
     if (i==l)
         {  QLabel* lable =new QLabel(&out);
-            lable->move((move1)*14,325);
+            lable->move((move1)*25,325);
             lable->setText(QString::number(starting_time2[i]+BurstTime2[i]));
             move1+=BurstTime2[i]+gap2[i+1];
             lable->show();
@@ -353,7 +353,7 @@ int move1=0;
  {
     if (gap2[i+1]==0) {move2+=BurstTime2[i+1]; continue;}
     QLabel* lable =new QLabel(&out);
-    lable->move((move2)*14,325);
+    lable->move((move2)*25,325);
     lable->setText(QString::number(starting_time2[i]+BurstTime2[i]));
     move2+=BurstTime2[i+1]+gap2[i+1];
     lable->show();

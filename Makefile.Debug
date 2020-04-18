@@ -263,7 +263,7 @@ debug/moc_input_fcfs.cpp: input_fcfs.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_32/bin/moc.exe
-	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/handsa/drive-download-20200413T194735Z-001/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/handsa/drive-download-20200413T194735Z-001 -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include input_fcfs.h -o debug\moc_input_fcfs.cpp
+	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include input_fcfs.h -o debug\moc_input_fcfs.cpp
 
 debug/moc_input_priority_non.cpp: input_priority_non.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
@@ -373,7 +373,7 @@ debug/moc_input_priority_non.cpp: input_priority_non.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_32/bin/moc.exe
-	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/handsa/drive-download-20200413T194735Z-001/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/handsa/drive-download-20200413T194735Z-001 -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include input_priority_non.h -o debug\moc_input_priority_non.cpp
+	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include input_priority_non.h -o debug\moc_input_priority_non.cpp
 
 debug/moc_mainwindow.cpp: mainwindow.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QMainWindow \
@@ -485,7 +485,7 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qicon.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_32/bin/moc.exe
-	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/handsa/drive-download-20200413T194735Z-001/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/handsa/drive-download-20200413T194735Z-001 -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include mainwindow.h -o debug\moc_mainwindow.cpp
+	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include mainwindow.h -o debug\moc_mainwindow.cpp
 
 debug/moc_output.cpp: output.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
@@ -595,7 +595,7 @@ debug/moc_output.cpp: output.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_32/bin/moc.exe
-	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/handsa/drive-download-20200413T194735Z-001/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/handsa/drive-download-20200413T194735Z-001 -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include output.h -o debug\moc_output.cpp
+	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include output.h -o debug\moc_output.cpp
 
 debug/moc_pre_priority.cpp: pre_priority.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
@@ -705,7 +705,7 @@ debug/moc_pre_priority.cpp: pre_priority.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_32/bin/moc.exe
-	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/handsa/drive-download-20200413T194735Z-001/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/handsa/drive-download-20200413T194735Z-001 -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include pre_priority.h -o debug\moc_pre_priority.cpp
+	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include pre_priority.h -o debug\moc_pre_priority.cpp
 
 debug/moc_preemptive.cpp: preemptive.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
@@ -815,7 +815,7 @@ debug/moc_preemptive.cpp: preemptive.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_32/bin/moc.exe
-	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/handsa/drive-download-20200413T194735Z-001/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/handsa/drive-download-20200413T194735Z-001 -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include preemptive.h -o debug\moc_preemptive.cpp
+	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include preemptive.h -o debug\moc_preemptive.cpp
 
 debug/moc_rr.cpp: rr.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
@@ -925,7 +925,7 @@ debug/moc_rr.cpp: rr.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_32/bin/moc.exe
-	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/handsa/drive-download-20200413T194735Z-001/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/handsa/drive-download-20200413T194735Z-001 -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include rr.h -o debug\moc_rr.cpp
+	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include rr.h -o debug\moc_rr.cpp
 
 debug/moc_sjf_non.cpp: sjf_non.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
@@ -1035,7 +1035,7 @@ debug/moc_sjf_non.cpp: sjf_non.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.14.2/mingw73_32/bin/moc.exe
-	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/handsa/drive-download-20200413T194735Z-001/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/handsa/drive-download-20200413T194735Z-001 -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include sjf_non.h -o debug\moc_sjf_non.cpp
+	C:\Qt\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final/debug/moc_predefs.h -IC:/Qt/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/doaay/OneDrive/Desktop/Tasleem_OS/Final_Doaa/Final -IC:/Qt/5.14.2/mingw73_32/include -IC:/Qt/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/5.14.2/mingw73_32/include/QtGui -IC:/Qt/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/5.14.2/mingw73_32/include/QtCore -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_32/i686-w64-mingw32/include sjf_non.h -o debug\moc_sjf_non.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1792,11 +1792,10 @@ debug/output.o: output.cpp output.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\output.o output.cpp
 
-debug/pre_priority.o: pre_priority.cpp pre_priority.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
-		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtguiglobal.h \
+debug/pre_priority.o: pre_priority.cpp ui_pre_priority.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/QVariant \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qvariant.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qatomic.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qglobal.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qconfig.h \
@@ -1808,38 +1807,29 @@ debug/pre_priority.o: pre_priority.cpp pre_priority.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qsysinfo.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qlogging.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qflags.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qatomic.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qmutex.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qversiontagging.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qbasicatomic.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qatomic_bootstrap.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qgenericatomic.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qatomic_cxx11.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qatomic_msvc.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qmutex.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qnumeric.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qversiontagging.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtgui-config.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qwidget.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtGui/qwindowdefs.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qnamespace.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qobject.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstring.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qchar.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qbytearray.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qnamespace.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qarraydata.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringliteral.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringalgorithms.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringview.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringbuilder.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qlist.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qalgorithms.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qiterator.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstring.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qchar.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringview.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringbuilder.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qpair.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qvector.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qcontainertools_impl.h \
@@ -1848,16 +1838,43 @@ debug/pre_priority.o: pre_priority.cpp pre_priority.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringlist.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qregexp.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qcoreevent.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qscopedpointer.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qmap.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qdebug.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qhash.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qtextstream.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qiodevice.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qobject.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qcoreevent.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qscopedpointer.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qlocale.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qshareddata.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qset.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QApplication \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtguiglobal.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtgui-config.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qsize.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qmargins.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qcursor.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qwidget.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qrect.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qsize.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qpalette.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qcolor.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qrgb.h \
@@ -1867,38 +1884,62 @@ debug/pre_priority.o: pre_priority.cpp pre_priority.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qpolygon.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qregion.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qdatastream.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qiodevice.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qline.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtransform.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qpainterpath.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qimage.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qpixelformat.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qpixmap.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qshareddata.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qhash.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qsharedpointer_impl.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qfont.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qfontmetrics.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qfontinfo.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qsizepolicy.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtGui/qcursor.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qkeysequence.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qevent.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qvariant.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qmap.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qdebug.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qtextstream.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qlocale.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qset.h \
-		C:/Qt/5.14.2/mingw73_32/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qurl.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qurlquery.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qfile.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
-		ui_pre_priority.h
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QDialog \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QHBoxLayout \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QLabel \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qlabel.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QLineEdit \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qlineedit.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtextcursor.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtextformat.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qpen.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QPushButton \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qicon.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QWidget \
+		pre_priority.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/QString \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/QDebug \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QMessageBox \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qmessagebox.h \
+		output.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/QTextEdit \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qtextedit.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qtextdocument.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/QIntValidator \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.14.2/mingw73_32/include/QtGui/QDoubleValidator \
+		C:/Qt/5.14.2/mingw73_32/include/QtCore/QtAlgorithms
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\pre_priority.o pre_priority.cpp
 
 debug/preemptive.o: preemptive.cpp preemptive.h \

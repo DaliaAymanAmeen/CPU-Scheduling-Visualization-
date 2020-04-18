@@ -84,7 +84,7 @@ bool cmp(SRTF_Process A, SRTF_Process B) {
 
 void SRTF_Gantt_Chart(QVector<SRTF_Process> &sr, QVector<QString> &ids)
 {
-    float time = 0;
+    int time = 0;
     int flag = 0, num = sr.size();
     while (flag != 1)
     {
@@ -127,13 +127,13 @@ void SRTF_Gantt_Chart(QVector<SRTF_Process> &sr, QVector<QString> &ids)
 
 float SRTF_Waiting_time(QVector<SRTF_Process> &sr) {
 
-    float total = 0;
+    int total = 0;
     for (int i = 0; i < sr.size(); i++)
     {
         total += sr[i].wt;
     }
     //cout<<"avg waiting time" << (1.0*total / sr.size())<<endl;
-    return (1.0*total / sr.size());
+    return (1.0*total / sr.size()/100);
 }
 
 
@@ -141,12 +141,12 @@ float SRTF_Waiting_time(QVector<SRTF_Process> &sr) {
 
 float SRTF_Turn_Around(QVector<SRTF_Process> &sr) {
 
-    float total = 0;
+    int total = 0;
     for (int i = 0; i < sr.size(); i++) {
 
         total += sr[i].wt + sr[i].bt;
     }
-    return (1.0*total / sr.size());
+    return (1.0*total / sr.size()/100);
 }
 
 
@@ -155,9 +155,9 @@ void SRTF(QVector<QString>&id, QVector<float>&burst, QVector<float>&arival, QVec
     QVector<QString>time_line;
     //to put the input in SRFT QVector
 
-    for (int i = 0; i <= q; i++) {
+    for (int i = 0; i <id.size(); i++) {
 
-        v.push_back(SRTF_Process(id[i], burst[i], arival[i]));
+        v.push_back(SRTF_Process(id[i], burst[i]*100, arival[i]*100));
     }
     id.clear();
     burst.clear();
@@ -165,7 +165,7 @@ void SRTF(QVector<QString>&id, QVector<float>&burst, QVector<float>&arival, QVec
     start.clear();
     qSort(v.begin(), v.end(),cmp);
     SRTF_Gantt_Chart(v, time_line);
-    float  gap = 0, time = 0;
+    int  gap = 0, time = 0;
     QString lastid = time_line[0];
 
     time_line.push_back("-1");
@@ -182,16 +182,16 @@ void SRTF(QVector<QString>&id, QVector<float>&burst, QVector<float>&arival, QVec
         else if (time_line[i] != lastid) {
             if (lastid != "-1" && time_line[i] != "-1") {
                 id.push_back(lastid);
-                burst.push_back(time);
-                arival.push_back(gap);
+                burst.push_back(1.0*time/100);
+                arival.push_back(1.0*gap/100);
                 lastid = time_line[i];
                 time = 1;
                 gap = 0;
             }
             else if (lastid != "-1" && time_line[i] == "-1") {
                 id.push_back(lastid);
-                burst.push_back(time);
-                arival.push_back(gap);
+                burst.push_back(1.0*time/100);
+                arival.push_back(1.0*gap/100);
                 lastid = time_line[i];
                 time = 0;
                 gap = 1;
@@ -286,7 +286,7 @@ void preemptive::on_PB_finish_clicked()
         if (ids.size()==1)
         {
             label->move(5,300);
-            label->setFixedWidth((burst[0])*14);
+            label->setFixedWidth((burst[0])*25);
               label->setFixedHeight(25);
               label->setStyleSheet("QLabel {text-align: center;background-color :rgb(148, 200, 190); color :white; border-width : 2px ; border-style: solid; border-color:white }");
               //label->setLayout(QLay)
@@ -294,7 +294,7 @@ void preemptive::on_PB_finish_clicked()
             } // w hna 3lshan law process wahda
 
         label->move(5,300);
-        label->setFixedWidth((burst[0])*14);
+        label->setFixedWidth((burst[0])*25);
           label->setFixedHeight(25);
         move=burst[0]+arival[1];
 
@@ -302,9 +302,9 @@ void preemptive::on_PB_finish_clicked()
 
     else
     {
-        label->setFixedWidth((burst[i])*14);
+        label->setFixedWidth((burst[i])*25);
           label->setFixedHeight(25);
-        label->move((move)*14,300);
+        label->move((move)*25,300);
         if (i!=ids.size()-1) move+=burst[i]+arival[i+1];
 
     }
@@ -325,7 +325,7 @@ int move1=0;  //starting time
  {
     QLabel* lable =new QLabel(&out);
     lable->setText(QString::number(start[i]));
-    lable->move((move1)*14,325);
+    lable->move((move1)*25,325);
     if (i!=start.size()-1) move1+=burst[i]+arival[i+1];
     else move1+=burst[i];
     lable->show();
@@ -333,7 +333,7 @@ int move1=0;  //starting time
 
     if (i==start.size()-1)  //finish last process
         {  QLabel* lable =new QLabel(&out);
-            lable->move((move1)*14,325);
+            lable->move((move1)*25,325);
             lable->setText(QString::number(start[i]+burst[i]));
            // move1+=burst[i]+arival[i+1];
             lable->show();
@@ -349,7 +349,7 @@ int move1=0;  //starting time
        if (arival.size()==1) continue; //hna 3lshan law process wahda
        if (arival[i+1]==0){move2+=burst[i+1]; continue;}
        QLabel* lable =new QLabel(&out);
-       lable->move((move2)*14,325);
+       lable->move((move2)*25,325);
        lable->setText(QString::number(start[i]+burst[i]));
        if (i != arrival.size()-1) move2+=burst[i+1]+arival[i+1];
        lable->show();

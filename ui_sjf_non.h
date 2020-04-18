@@ -97,10 +97,10 @@ public:
         PB_finish = new QPushButton(SJF_non);
         PB_finish->setObjectName(QString::fromUtf8("PB_finish"));
         PB_finish->setGeometry(QRect(380, 230, 75, 23));
-        QWidget::setTabOrder(PB_next, PB_finish);
-        QWidget::setTabOrder(PB_finish, lineEdit_name_3);
         QWidget::setTabOrder(lineEdit_name_3, lineEdit_arrival_3);
         QWidget::setTabOrder(lineEdit_arrival_3, lineEdit_burst_3);
+        QWidget::setTabOrder(lineEdit_burst_3, PB_next);
+        QWidget::setTabOrder(PB_next, PB_finish);
 
         retranslateUi(SJF_non);
 

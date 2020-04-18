@@ -107,11 +107,11 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>PB_next</tabstop>
-  <tabstop>PB_finish</tabstop>
   <tabstop>lineEdit_name_3</tabstop>
   <tabstop>lineEdit_arrival_3</tabstop>
   <tabstop>lineEdit_burst_3</tabstop>
+  <tabstop>PB_next</tabstop>
+  <tabstop>PB_finish</tabstop>
  </tabstops>
  <resources/>
  <connections/>

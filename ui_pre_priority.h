@@ -46,7 +46,7 @@ public:
     {
         if (pre_priority->objectName().isEmpty())
             pre_priority->setObjectName(QString::fromUtf8("pre_priority"));
-        pre_priority->resize(1167, 611);
+        pre_priority->resize(769, 544);
         layoutWidget_3 = new QWidget(pre_priority);
         layoutWidget_3->setObjectName(QString::fromUtf8("layoutWidget_3"));
         layoutWidget_3->setGeometry(QRect(60, 120, 161, 31));
@@ -117,6 +117,11 @@ public:
         PB_finish = new QPushButton(pre_priority);
         PB_finish->setObjectName(QString::fromUtf8("PB_finish"));
         PB_finish->setGeometry(QRect(420, 320, 75, 23));
+        QWidget::setTabOrder(lineEdit_Process, lineEdit_arrival);
+        QWidget::setTabOrder(lineEdit_arrival, lineEdit_burst);
+        QWidget::setTabOrder(lineEdit_burst, priority_2);
+        QWidget::setTabOrder(priority_2, PB_next);
+        QWidget::setTabOrder(PB_next, PB_finish);
 
         retranslateUi(pre_priority);
 

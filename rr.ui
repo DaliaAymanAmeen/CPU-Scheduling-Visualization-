@@ -137,12 +137,12 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>PB_next</tabstop>
-  <tabstop>PB_finish</tabstop>
   <tabstop>lineEdit_name6</tabstop>
   <tabstop>lineEdit_arrival6</tabstop>
   <tabstop>lineEdit_burst6</tabstop>
   <tabstop>lineEdit_timeslice</tabstop>
+  <tabstop>PB_next</tabstop>
+  <tabstop>PB_finish</tabstop>
  </tabstops>
  <resources/>
  <connections/>

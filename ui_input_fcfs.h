@@ -98,6 +98,10 @@ public:
 
         horizontalLayout_3->addWidget(lineEdit_burst);
 
+        QWidget::setTabOrder(lineEdit_name, lineEdit_arrival);
+        QWidget::setTabOrder(lineEdit_arrival, lineEdit_burst);
+        QWidget::setTabOrder(lineEdit_burst, PB_next);
+        QWidget::setTabOrder(PB_next, PB_finish);
 
         retranslateUi(input_fcfs);
 

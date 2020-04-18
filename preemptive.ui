@@ -106,6 +106,13 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_name5</tabstop>
+  <tabstop>lineEdit_arrival5</tabstop>
+  <tabstop>lineEdit_burst5</tabstop>
+  <tabstop>PB_next</tabstop>
+  <tabstop>PB_finish</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

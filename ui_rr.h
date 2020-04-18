@@ -117,11 +117,11 @@ public:
 
         horizontalLayout_4->addWidget(lineEdit_timeslice);
 
-        QWidget::setTabOrder(PB_next, PB_finish);
-        QWidget::setTabOrder(PB_finish, lineEdit_name6);
         QWidget::setTabOrder(lineEdit_name6, lineEdit_arrival6);
         QWidget::setTabOrder(lineEdit_arrival6, lineEdit_burst6);
         QWidget::setTabOrder(lineEdit_burst6, lineEdit_timeslice);
+        QWidget::setTabOrder(lineEdit_timeslice, PB_next);
+        QWidget::setTabOrder(PB_next, PB_finish);
 
         retranslateUi(rr);
 

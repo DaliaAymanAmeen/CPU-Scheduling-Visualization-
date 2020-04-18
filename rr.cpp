@@ -209,7 +209,7 @@ void RR(QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> 
             adding_starting_gap_time(process,ArrivalTime,BurstTime,StartingTime,GapTime,size);
         }
 
-float AVG_waiting(QVector <float>&ArrivalTime,QVector <float> &StartingTime, int &size){
+/* float AVG_waiting(QVector <float>&ArrivalTime,QVector <float> &StartingTime, int &size){
 
             float total_wait=0;
             for(int i=0;i<size;i++){
@@ -218,29 +218,126 @@ float AVG_waiting(QVector <float>&ArrivalTime,QVector <float> &StartingTime, int
 
 
             }
-            return ((float)total_wait/(float)size);
-        }
+            return (total_wait/size);//doaaaaaaaaaaaaaaaaaaafloat/float
+        } */
 
-float AVG_TurnAround(QVector <QString> &process,QVector <QString> &old_process,QVector <float>&ArrivalTime, QVector <float> &BurstTime,QVector <float> &StartingTime,int &size,int &old_size){
+/*float AVG_TurnAround(QVector <QString> &process,QVector <QString> &old_process,QVector <float>&ArrivalTime, QVector <float> &BurstTime,QVector <float> &StartingTime,int &size,int &old_size){
 
             QVector <float> turn_around(old_size);
             float turn_aroundd=0,sum=0;
             for(int i=0;i<old_size;i++){
                 for(int j=0;j<size;j++){
                     if(old_process[i]==process[j])
-                    {turn_aroundd=StartingTime[j]+BurstTime[j]-ArrivalTime[j];}
+                    {
+                    turn_aroundd=StartingTime[j]+BurstTime[j]-ArrivalTime[j];
+                }
 
                 }
-                turn_around[i]=turn_aroundd;
+                turn_around[i]=turn_aroundd; //
             }
 
-            for(int i=0;i<old_size;i++)
+            for(int i=0;i<old_size;i++) //doaaaaaaaaaaaaaaaaaaaaaaaaa
                 sum+=turn_around[i];
-            return ((float)sum/(float)old_size);
+            return (sum/old_size);
+        } */
+float AVG_TrunA(QVector<QString>&Process,QVector<float>&at,QVector<float>&bt,QVector<float>&rt,int size,float Q,float &Waiting)
+{
+ //sort_process(Process,at,bt,size);
+
+    float i,time,remain=size,temps=0,time_quantum=Q;
+
+        float wt=0,tat=0;
+
+    for(time=0,i=0;remain!=0;)
+        {
+            if(rt[i]<=time_quantum && rt[i]>0)
+            {
+                time += rt[i];
+                //Addition using shorthand operators
+                rt[i]=0;
+                temps=1;
+            }
+
+            else if(rt[i]>0)
+            {
+                rt[i] -= time_quantum;
+                //Subtraction using shorthand operators
+                time += time_quantum;
+                //Addition using shorthand operators
+            }
+
+            if(rt[i]==0 && temps==1)
+            {
+                remain--;
+                //Desplaying the result of wating, turn around time:
+              //  printf("Process{%d}\t:\t%d\t:\t%d\n",i+1,time-at[i],time-at[i]-bt[i]);
+                //cout<<endl;
+
+                wt += time-at[i]-bt[i];
+                tat += time-at[i];
+                temps=0;
+            }
+
+            if(i ==size-1)
+                i=0;
+            else if(at[i+1] <= time)
+                i++;
+            else
+                i=0;
         }
+    Waiting=wt/(float)size;
+    return(tat/(float)size);
+}
 
 
+float AVG_waiting(QVector<QString>&Process,QVector<float>&at,QVector<float>&bt,QVector<float>&rt,int size,float Q,float &Waiting)
+{
 
+
+    float i,time,remain=size,temps=0,time_quantum=Q;
+
+        float wt=0,tat=0;
+
+    for(time=0,i=0;remain!=0;)
+        {
+            if(rt[i]<=time_quantum && rt[i]>0)
+            {
+                time += rt[i];
+                //Addition using shorthand operators
+                rt[i]=0;
+                temps=1;
+            }
+
+            else if(rt[i]>0)
+            {
+                rt[i] -= time_quantum;
+                //Subtraction using shorthand operators
+                time += time_quantum;
+                //Addition using shorthand operators
+            }
+
+            if(rt[i]==0 && temps==1)
+            {
+                remain--;
+                //Desplaying the result of wating, turn around time:
+              //  printf("Process{%d}\t:\t%d\t:\t%d\n",i+1,time-at[i],time-at[i]-bt[i]);
+                //cout<<endl;
+
+                wt += time-at[i]-bt[i];
+                tat += time-at[i];
+                temps=0;
+            }
+
+            if(i ==size-1)
+                i=0;
+            else if(at[i+1] <= time)
+                i++;
+            else
+                i=0;
+        }
+    Waiting=wt/(float)size;
+    return(wt/(float)size);
+}
 
 
 void rr::on_PB_finish_clicked()
@@ -265,12 +362,23 @@ void rr::on_PB_finish_clicked()
     Q=ui->lineEdit_timeslice->text().split(" ")[0].toFloat();
     size1=r+1;
     old_size=size1;
+    QVector<float>dArrival(ArrivalTime6);
+    QVector<float>dBurst(BurstTime6);
+    QVector<float>dRT=dBurst;
+    QVector<QString>pro(process6);
+    QVector<float>wArrival(ArrivalTime6);
+    QVector<float>wBurst(BurstTime6);
+    QVector<float>wRT=dBurst;
+    QVector<QString>wpro(process6);
+    float waiting;
 
+   sort_process( pro,dArrival,dBurst, size1);
+    sort_process( wpro,wArrival,wBurst, size1);
     RR(process6,ArrivalTime6,BurstTime6,StartingTime6,GapTime6,size1,Q);
-    AvgWaitingTime6 = AVG_waiting(ArrivalTime6,StartingTime6, size1);
-    AvgTurnAround6 = AVG_TurnAround(process6,fixed_process,ArrivalTime6,BurstTime6,StartingTime6,size1,old_size);
 
-
+  //  AvgTurnAround6 = AVG_TurnAround(process6,fixed_process,ArrivalTime6,BurstTime6,StartingTime6,size1,old_size);
+AvgTurnAround6=AVG_TrunA(pro,dArrival,dBurst,dRT,r+1,Q,waiting);
+AvgWaitingTime6 =AVG_waiting(wpro,wArrival,wBurst,wRT,r+1,Q,waiting);
 
     output out;
     out.setModal(true);
@@ -306,7 +414,7 @@ void rr::on_PB_finish_clicked()
     if(i==0)
     {
         label->move(5,300);
-        label->setFixedWidth((int(BurstTime6[i]))*14);
+        label->setFixedWidth((int(BurstTime6[i]))*25);
         label->setFixedHeight(25);
         move=BurstTime6[0]+GapTime6[1];
 
@@ -314,9 +422,9 @@ void rr::on_PB_finish_clicked()
 
     else
     {
-        label->setFixedWidth((int(BurstTime6[i]))*14);
+        label->setFixedWidth((int(BurstTime6[i]))*25);
         label->setFixedHeight(25);
-        label->move((move)*14,300);
+        label->move((move)*25,300);
 
         if (i!=size1-1) move+=BurstTime6[i]+GapTime6[i+1];
     }
@@ -333,14 +441,14 @@ int move1=0;
  {
     QLabel* lable =new QLabel(&out);
     lable->setText(QString::number(StartingTime6[i]));
-    lable->move((move1)*14,325);
+    lable->move((move1)*25,325);
     if (i!=size1-1) move1+=BurstTime6[i]+GapTime6[i+1];
     else move1+= BurstTime6[i];
     lable->show();
 
     if (i==size1-1)  //akher proces finish time
         {  QLabel* lable =new QLabel(&out);
-            lable->move((move1)*14,325);
+            lable->move((move1)*25,325);
             lable->setText(QString::number(StartingTime6[i]+BurstTime6[i]));
             //move1+=BurstTime6[i]+GapTime6[i];
             lable->show();
@@ -353,13 +461,14 @@ int move2=BurstTime6[0];
     {
        if (GapTime6[i+1]==0) {move2+=BurstTime6[i+1]; continue;}
        QLabel* lable =new QLabel(&out);
-       lable->move((move2)*14,325);
+       lable->move((move2)*25,325);
        lable->setText(QString::number(StartingTime6[i]+BurstTime6[i]));
        if (i!=size1-1) move2+=BurstTime6[i+1]+GapTime6[i+1]; //+1
        lable->show();
 
     }
 
+//doaa bet2alef
 
 
 

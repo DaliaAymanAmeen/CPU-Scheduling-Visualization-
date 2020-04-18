@@ -96,7 +96,7 @@ void priority_pree_Gantt_Chart(QVector<priority_Preemptive> &sr, QVector<QString
 {
 
 
-    float time = 0, flag = 0, num = sr.size();
+    int time = 0, flag = 0, num = sr.size();
     while (flag != 1)
     {
         flag = 1;
@@ -150,7 +150,7 @@ void priority_pree_Gantt_Chart(QVector<priority_Preemptive> &sr, QVector<QString
 
 float priority_pree_Waiting_time(QVector<priority_Preemptive> &sr) {
 
-    float total = 0;
+    int total = 0;
     for (int i = 0; i < sr.size(); i++) {
 
         total += sr[i].wt;
@@ -159,7 +159,7 @@ float priority_pree_Waiting_time(QVector<priority_Preemptive> &sr) {
     }
 
     //cout<<"avg waiting time" << (1.0*total / sr.size())<<endl;
-    return (1.0*total / sr.size());
+    return (1.0*total / sr.size()/100);
 
 
 }
@@ -167,7 +167,7 @@ float priority_pree_Waiting_time(QVector<priority_Preemptive> &sr) {
 
 float priority_pree_Turn_Around(QVector<priority_Preemptive> &sr) {
 
-    float total = 0;
+    int total = 0;
     for (int i = 0; i < sr.size(); i++) {
 
         total += sr[i].wt + sr[i].bt;
@@ -175,7 +175,7 @@ float priority_pree_Turn_Around(QVector<priority_Preemptive> &sr) {
 
     }
 
-    return (1.0*total / sr.size());
+    return (1.0*total / sr.size()/100);
 }
 
 
@@ -186,7 +186,7 @@ void priority_pree(QVector<QString>&id, QVector<float>&burst, QVector<float>&arr
     //to put the input in SRFT vector
 
     for (int i = 0; i < id.size(); i++) {
-        v.push_back(priority_Preemptive(id[i], burst[i], arrival[i], priority[i]));
+        v.push_back(priority_Preemptive(id[i], burst[i]*100, arrival[i]*100, priority[i]));
     }
     id.clear();
     burst.clear();
@@ -212,16 +212,16 @@ void priority_pree(QVector<QString>&id, QVector<float>&burst, QVector<float>&arr
         else if (time_line[i] != lastid) {
             if (lastid != "-1" && time_line[i] != "-1") {
                 id.push_back(lastid);
-                burst.push_back(time);
-                arrival.push_back(gap);
+                burst.push_back(1.0*time/100);
+                arrival.push_back(1.0*gap/100);
                 lastid = time_line[i];
                 time = 1;
                 gap = 0;
             }
             else if (lastid != "-1" && time_line[i] == "-1") {
                 id.push_back(lastid);
-                burst.push_back(time);
-                arrival.push_back(gap);
+                burst.push_back(1.0*time/100);
+                arrival.push_back(1.0*gap/100);
                 lastid = time_line[i];
                 time = 0;
                 gap = 1;
@@ -329,7 +329,7 @@ void pre_priority::on_PB_finish_clicked()
         if (idsp.size()==1)
         {
             label->move(5,300);
-            label->setFixedWidth((burstp[0])*14);
+            label->setFixedWidth((burstp[0])*25);
               label->setFixedHeight(25);
               label->setStyleSheet("QLabel {text-align: center;background-color :rgb(148, 200, 190); color :white; border-width : 2px ; border-style: solid; border-color:white }");
               //label->setLayout(QLay)
@@ -337,7 +337,7 @@ void pre_priority::on_PB_finish_clicked()
             } // w hna 3lshan law process wahda
 
         label->move(5,300);
-        label->setFixedWidth((burstp[0])*14);
+        label->setFixedWidth((burstp[0])*25);
           label->setFixedHeight(25);
         move=burstp[0]+arivalp[1];
 
@@ -345,9 +345,9 @@ void pre_priority::on_PB_finish_clicked()
 
     else
     {
-        label->setFixedWidth((burstp[i])*14);
+        label->setFixedWidth((burstp[i])*25);
           label->setFixedHeight(25);
-        label->move((move)*14,300);
+        label->move((move)*25,300);
         if (i!=idsp.size()-1) move+=burstp[i]+arivalp[i+1];
 
     }
@@ -366,7 +366,7 @@ int move1=0;  //starting time
  {
     QLabel* lable =new QLabel(&out);
     lable->setText(QString::number(startp[i]));
-    lable->move((move1)*14,325);
+    lable->move((move1)*25,325);
     if (i!=startp.size()-1) move1+=burstp[i]+arivalp[i+1];
     else move1+=burstp[i];
     lable->show();
@@ -374,7 +374,7 @@ int move1=0;  //starting time
 
     if (i==startp.size()-1)  //finish last process
         {  QLabel* lable =new QLabel(&out);
-            lable->move((move1)*14,325);
+            lable->move((move1)*25,325);
             lable->setText(QString::number(startp[i]+burstp[i]));
            // move1+=burst[i]+arival[i+1];
             lable->show();
@@ -395,7 +395,7 @@ int move1=0;  //starting time
 
        if (arivalp[i+1]==0){move2+=burstp[i+1]; continue;}
        QLabel* lable =new QLabel(&out);
-       lable->move((move2)*14,325);
+       lable->move((move2)*25,325);
        lable->setText(QString::number(startp[i]+burstp[i]));
        if (i != arrival.size()-1) move2+=burstp[i+1]+arivalp[i+1];
        lable->show();

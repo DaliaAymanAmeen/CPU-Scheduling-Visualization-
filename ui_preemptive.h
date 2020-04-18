@@ -97,6 +97,10 @@ public:
 
         horizontalLayout_3->addWidget(lineEdit_burst5);
 
+        QWidget::setTabOrder(lineEdit_name5, lineEdit_arrival5);
+        QWidget::setTabOrder(lineEdit_arrival5, lineEdit_burst5);
+        QWidget::setTabOrder(lineEdit_burst5, PB_next);
+        QWidget::setTabOrder(PB_next, PB_finish);
 
         retranslateUi(preemptive);
 
