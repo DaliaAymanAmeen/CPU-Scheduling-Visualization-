@@ -358,7 +358,7 @@ int move1=0;
 
  for (int i=0 ; i<j+1 ; i++)
  {
-   if (gap1[i+1]==0) {move2+=BurstTime1[i]; continue;}
+   if (gap1[i+1]==0) {move2+=BurstTime1[i+1]; continue;}
    QLabel* lable =new QLabel(&out);
    lable->move((move2)*14,325);
    lable->setText(QString::number(starting_time1[i]+BurstTime1   [i]));

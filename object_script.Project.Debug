@@ -1,0 +1,17 @@
+debug/input_fcfs.o
+debug/input_priority_non.o
+debug/main.o
+debug/mainwindow.o
+debug/output.o
+debug/pre_priority.o
+debug/preemptive.o
+debug/rr.o
+debug/sjf_non.o
+debug/moc_input_fcfs.o
+debug/moc_input_priority_non.o
+debug/moc_mainwindow.o
+debug/moc_output.o
+debug/moc_pre_priority.o
+debug/moc_preemptive.o
+debug/moc_rr.o
+debug/moc_sjf_non.o

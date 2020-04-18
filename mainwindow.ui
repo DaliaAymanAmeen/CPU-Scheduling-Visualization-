@@ -68,6 +68,13 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QRadioButton" name="Pre_Priority">
+       <property name="text">
+        <string>Pre_Priority</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -103,7 +110,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

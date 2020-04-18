@@ -1,0 +1,17 @@
+release/input_fcfs.o
+release/input_priority_non.o
+release/main.o
+release/mainwindow.o
+release/output.o
+release/pre_priority.o
+release/preemptive.o
+release/rr.o
+release/sjf_non.o
+release/moc_input_fcfs.o
+release/moc_input_priority_non.o
+release/moc_mainwindow.o
+release/moc_output.o
+release/moc_pre_priority.o
+release/moc_preemptive.o
+release/moc_rr.o
+release/moc_sjf_non.o

@@ -37,19 +37,18 @@ float TurnAroundTime6[1000];
 float AvgWaitingTime6=0;
 float AvgTurnAround6=0;
 QVector <float> StartingTime6 (1000);
-int Q;
+float Q;   //khalet di float brdo
 float temp;
 int old_size;
 QVector <float> GapTime6 (1000);
 int size1;
 
 void rr::on_PB_next_clicked()
-{ int pos=0;
+{
+    int pos=0;
     QString arrival =ui->lineEdit_arrival6->text();
     QString Burst=ui->lineEdit_burst6->text();
-     QDoubleValidator v( 0, 10000,3, this );
-
-
+    QDoubleValidator v( 0, 10000,3, this );
 
 
     if(v.validate(arrival , pos)==QValidator::Invalid ||v.validate(Burst , pos)==QValidator::Invalid)
@@ -109,16 +108,16 @@ void sort_process( QVector <QString> &process,QVector <float>&ArrivalTime, QVect
     }
 }
 
-void round_robin_editing(QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> &BurstTime, int &size,int Q){
+void round_robin_editing(QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> &BurstTime, int &size,float Q){
             int temp_size=0,adder=0;
             QVector <QString> rr_process;
-            QVector <int> rr_ArrivalTime;
-            QVector <int>  rr_BurstTime;
-            QVector <int>  rr_GapTime;
+            QVector <float> rr_ArrivalTime;            //el talata arrays dool
+            QVector <float>  rr_BurstTime;
+            QVector <float>  rr_GapTime;
             int  rr_size;
             //calculating new number of processes according to RR and resizing the new vectors.
             for(int i=0;i<size;i++){
-            if(int(BurstTime[i])%Q ==0)
+            if(int(BurstTime[i])%int(Q) ==0)              //casting hena
             {temp_size=temp_size+(BurstTime[i]/Q);}
             else
             {temp_size=temp_size+(BurstTime[i]/Q)+1;}
@@ -201,7 +200,7 @@ void round_robin_editing(QVector <QString> &process,QVector <float>&ArrivalTime,
             }
         }
 
-void RR(QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> &BurstTime,QVector <float> &StartingTime,QVector <float> &GapTime, int &size,int Q){
+void RR(QVector <QString> &process,QVector <float>&ArrivalTime, QVector <float> &BurstTime,QVector <float> &StartingTime,QVector <float> &GapTime, int &size,float Q){
             //sorting processes according to arrival time.
             sort_process(process,ArrivalTime,BurstTime,size);
             //making RR slices.
@@ -249,7 +248,7 @@ void rr::on_PB_finish_clicked()
     QString arrival =ui->lineEdit_arrival6->text();
     QString Burst=ui->lineEdit_burst6->text();
     QString times=ui->lineEdit_timeslice->text();
-     QDoubleValidator v( 0, 10000,3, this );
+    QDoubleValidator v( 0, 10000,3, this );
 
 
 
@@ -352,7 +351,7 @@ int move2=BurstTime6[0];
 //finish time
  for (int i=0 ; i<size1-1 ; i++)
     {
-       if (GapTime6[i+1]==0) {move2+=BurstTime6[i]; continue;}
+       if (GapTime6[i+1]==0) {move2+=BurstTime6[i+1]; continue;}
        QLabel* lable =new QLabel(&out);
        lable->move((move2)*14,325);
        lable->setText(QString::number(StartingTime6[i]+BurstTime6[i]));

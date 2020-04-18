@@ -21,6 +21,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     output.cpp \
+    pre_priority.cpp \
     preemptive.cpp \
     rr.cpp \
     sjf_non.cpp
@@ -30,6 +31,7 @@ HEADERS += \
     input_priority_non.h \
     mainwindow.h \
     output.h \
+    pre_priority.h \
     preemptive.h \
     rr.h \
     sjf_non.h
@@ -39,6 +41,7 @@ FORMS += \
     input_priority_non.ui \
     mainwindow.ui \
     output.ui \
+    pre_priority.ui \
     preemptive.ui \
     rr.ui \
     sjf_non.ui

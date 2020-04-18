@@ -5,7 +5,7 @@
 #include <sjf_non.h>
 #include <preemptive.h>
 #include <rr.h>
-
+#include <pre_priority.h>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -60,6 +60,12 @@ void MainWindow::on_pushButton_clicked()
         rr.setModal(true);
         rr.exec();
 
+
+    }
+    else if (ui->Pre_Priority->isChecked()) {
+        pre_priority preprio;
+        preprio.setModal(true);
+        preprio.exec();
 
     }
 
